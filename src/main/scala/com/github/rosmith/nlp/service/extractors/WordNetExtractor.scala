@@ -71,7 +71,7 @@ class WordNetExtractor extends AbstractExtractor {
           if (reference.size > 0) {
             list = list :+ new Triple().subj_(identity).pred_(Array("wordnet", "actor").mkString("_")).obj_(reference.apply(0).references.value)
           } else {
-            list = list :+ new Triple(true).subj_(identity).pred_(Array("wordnet", "actor").mkString("_")).obj_(pair.apply(0)._2.word)
+            list = list :+ new Triple().subj_(identity).pred_(Array("wordnet", "actor").mkString("_")).obj_(pair.apply(0)._2.word)
           }
 
         }
