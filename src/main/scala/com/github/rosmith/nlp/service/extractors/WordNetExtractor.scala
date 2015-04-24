@@ -41,7 +41,7 @@ class WordNetExtractor extends AbstractExtractor {
     var tuples = doc.typedDependencies.filter(td => rel.contains(td.value)).map(td => {
       var gov = doc.words.filter(w => w.identity.equals(td.governorIdentity)).apply(0)
       var dep = doc.words.filter(w => w.identity.equals(td.dependentIdentity)).apply(0)
-      doc.typedDependencies.filter(td => td.value.equals("nn") && td.governorIdentity.equals(dep.identity)).foreach(d => {
+      doc.typedDependencies.filter(td => td.value.equals("nn") && td.governorIdentity.equals(dep.identity)).reverse.foreach(d => {
         var other = doc.words.filter(w => w.identity.equals(d.dependentIdentity)).apply(0)
         var value = Array(other.word, dep.word).mkString(" ")
         dep.word(value)
