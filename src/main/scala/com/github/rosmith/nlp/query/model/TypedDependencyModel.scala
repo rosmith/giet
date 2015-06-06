@@ -1,6 +1,6 @@
 package com.github.rosmith.nlp.query.model
 
-class TypedDependencyModel(dependent: WordModel, governor: WordModel) {
+class TypedDependencyModel(dependent: WordModel, governor: WordModel) extends Serializable {
 
   private var _sentencePosition: Int = -1
 
