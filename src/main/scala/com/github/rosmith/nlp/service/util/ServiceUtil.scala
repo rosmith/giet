@@ -30,7 +30,7 @@ object ServiceUtil {
 
   def XSD_NAMESPACE = "http://www.w3.org/2001/XMLSchema#"
 
-  def NAMESPACE = "http://www.giet.com/annotator#"
+  def NAMESPACE = "http://www.giet-nlp.de/annotator#"
 
   def NAMESPACE_VARIABLE = "giet"
 
