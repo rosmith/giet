@@ -23,7 +23,7 @@ class BehindTheNameExtractor extends AbstractExtractor {
   def extract(doc: AnnotatedSentence): ju.List[Triple] = {
     var list = List[Triple]()
     doc.words.filter(w => w.ner.equals("PERSON")).foreach(w => {
-      val doc = Jsoup.connect(MessageFormat.format("http://www.behindthename.com/name/{0}", "smith")).get
+      val doc = Jsoup.connect(MessageFormat.format(URL, w.word)).get
       val gender = doc.select("div.namesub").filter(_.select("span.namesub").text().equals("GENDER:")).map(e => e.select("span.info").get(0)).get(0).text()
 
       var definition = Xsoup.compile("//div[@class='body']/div[3]/div[6]/text()").evaluate(doc).get();
