@@ -26,8 +26,8 @@ class StanfordProcessor extends Processor {
   def init(): Boolean = {
     try {
       val props = new Properties
-      props.setProperty("annotators", "tokenize, ssplit, pos, lemma, ner, parse, dcoref, srl")
-      props.setProperty("customAnnotatorClass.srl", "com.github.rosmith.nlp.service.annotator.SemanticRoleAnnotator")
+      props.setProperty("annotators", "tokenize, ssplit, pos, lemma, ner, parse, dcoref"/*, srl"*/)
+//      props.setProperty("customAnnotatorClass.srl", "com.github.rosmith.nlp.service.annotator.SemanticRoleAnnotator")
 
       System.err.println("Creating pipeline...")
       _pipeline = new StanfordCoreNLP(props)
